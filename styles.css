@@ -288,10 +288,6 @@ header {
   z-index: 1;
 }
 
-.hero-img img {
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-dark);
-}
 
 /* Features Section */
 .feature-icon {
