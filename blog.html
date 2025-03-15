@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Manual do Lettering</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/lucide-static@0.344.0/font/lucide.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Fontes melhoradas para um visual mais suave e feminino -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      :root {
+        --primary: #ff3d7f;
+        --primary-light: #ff6b9c;
+        --primary-dark: #e31b5f;
+        --secondary: #9c27b0;
+        --dark: #1a1a2e;
+        --light: #ffffff;
+        --gray: #8a8a8a;
+        --gray-light: #f8f9fa;
+        --gray-dark: #343a40;
+        --success: #28a745;
+        --pink: #ff3e96;
+        --brown: #6d4c41;
+        --green: #2e8b57;
+        --light-gray: #f8f8f8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --shadow: 0 10px 30px rgba(255, 61, 127, 0.1);
+        --shadow-dark: 0 15px 40px rgba(26, 26, 46, 0.1);
+        --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        --border-radius: 16px;
+        --border-radius-sm: 8px;
+      }
+      :root {
+        --bs-primary: var(--primary);
+        --bs-primary-rgb: 255, 61, 127;
+      } /* Sistema de tipografia melhorado */
+      body {
+        padding-top: 76px;
+        font-family: "Quicksand", sans-serif;
+        line-height: 1.7;
+        color: var(--dark);
+        overflow-x: hidden;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .display-4,
+      .display-5 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+      }
+      .lead {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        line-height: 1.6;
+      }
+      header {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .navbar {
+        padding: 1rem 0;
+      }
+      .navbar-brand {
+        font-family: "Caveat", cursive;
+        font-size: 1.8rem;
+        color: var(--primary) !important;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+      }
+      .nav-link {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.03em;
+        padding: 0.5rem 1rem !important;
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+      .nav-link:hover::after {
+        width: 80%;
+      }
+      .nav-link:hover {
+        color: var(--primary) !important;
+      } /* Hero */
+      .card {
+        border: none;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        background: var(--light);
+        overflow: hidden;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-dark);
+      }
+      .card-img-top {
+        height: 240px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+      .card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+      .card-body {
+        padding: 1.5rem;
+      }
+      .card-title {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+        color: var(--dark);
+        line-height: 1.3;
+      }
+      .card-text {
+        color: var(--gray);
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.7;
+      }
+      .badge {
+        font-family: "Montserrat", sans-serif;
+        padding: 0.5em 1em;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+      .btn {
+        font-family: "Montserrat", sans-serif;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        transition: var(--transition);
+      }
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        box-shadow: 0 4px 14px rgba(255, 61, 127, 0.3);
+      }
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 61, 127, 0.4);
+      }
+      .btn-light {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: transparent;
+        color: var(--primary);
+      }
+      .btn-light:hover {
+        background: var(--light);
+        color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+      .btn-link {
+        color: var(--gray);
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+      .btn-link:hover {
+        color: var(--primary);
+        background-color: rgba(255, 61, 127, 0.1);
+      }
+      .lucide {
+        width: 1.25em;
+        height: 1.25em;
+        vertical-align: text-bottom;
+        transition: var(--transition);
+      }
+      .display-5 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        display: inline-block;
+      }
+      .display-5::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-light);
+        border-radius: 3px;
+      }
+
+      /* Page Header */
+      .page-header {
+        background-color: var(--light-gray);
+        padding: 5rem 0 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 61, 127, 0.05) 0%,
+          rgba(156, 39, 176, 0.05) 100%
+        );
+        z-index: 0;
+      }
+
+      .page-header-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .page-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .breadcrumb {
+        background: transparent;
+        padding: 0;
+        margin-bottom: 0;
+      }
+
+      .breadcrumb-item a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb-item.active {
+        color: var(--gray);
+      }
+
+      /* Blog Styles */
+      .blog-post {
+        margin-bottom: 2.5rem;
+      }
+
+      .blog-post-img {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+
+      .blog-post-img img {
+        transition: var(--transition);
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .blog-post:hover .blog-post-img img {
+        transform: scale(1.05);
+      }
+
+      .blog-post-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--gray);
+      }
+
+      .blog-post-meta .author {
+        display: flex;
+        align-items: center;
+        margin-right: 1.5rem;
+      }
+
+      .blog-post-meta .author img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .blog-post-meta .date {
+        display: flex;
+        align-items: center;
+      }
+
+      .blog-post-meta .date i {
+        margin-right: 0.5rem;
+      }
+
+      .blog-post-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        transition: var(--transition);
+      }
+
+      .blog-post-title a {
+        color: var(--dark);
+        text-decoration: none;
+      }
+
+      .blog-post-title a:hover {
+        color: var(--primary);
+      }
+
+      .blog-post-excerpt {
+        margin-bottom: 1.5rem;
+        color: var(--gray);
+      }
+
+      .blog-post-link {
+        font-weight: 600;
+        color: var(--primary);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .blog-post-link i {
+        margin-left: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .blog-post-link:hover {
+        color: var(--primary-dark);
+      }
+
+      .blog-post-link:hover i {
+        transform: translateX(5px);
+      }
+
+      .blog-sidebar {
+        position: sticky;
+        top: 100px;
+      }
+
+      .sidebar-widget {
+        background-color: var(--light);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .sidebar-widget-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .sidebar-categories {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar-categories li {
+        margin-bottom: 0.75rem;
+      }
+
+      .sidebar-categories a {
+        color: var(--dark);
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        transition: var(--transition);
+      }
+
+      .sidebar-categories a:hover {
+        color: var(--primary);
+        transform: translateX(5px);
+      }
+
+      .sidebar-categories .count {
+        background-color: rgba(255, 61, 127, 0.1);
+        color: var(--primary);
+        border-radius: 30px;
+        padding: 0.1rem 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      .popular-post {
+        display: flex;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .popular-post:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .popular-post-img {
+        width: 80px;
+        height: 80px;
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
+        margin-right: 1rem;
+      }
+
+      .popular-post-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .popular-post:hover .popular-post-img img {
+        transform: scale(1.1);
+      }
+
+      .popular-post-content {
+        flex: 1;
+      }
+
+      .popular-post-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .popular-post-title a {
+        color: var(--dark);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .popular-post-title a:hover {
+        color: var(--primary);
+      }
+
+      .popular-post-date {
+        font-size: 0.8rem;
+        color: var(--gray);
+      }
+
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        background-color: var(--light-gray);
+        color: var(--gray);
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .tag:hover {
+        background-color: var(--primary);
+        color: var(--light);
+      }
+
+      .pagination {
+        margin-top: 3rem;
+      }
+
+      .page-link {
+        border: none;
+        color: var(--dark);
+        margin: 0 0.25rem;
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+      }
+
+      .page-link:hover {
+        background-color: var(--primary);
+        color: var(--light);
+      }
+
+      .page-item.active .page-link {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      footer {
+        background-color: var(--dark);
+        color: var(--light);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: var(--light);
+      }
+
+      .footer-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.75rem;
+        transition: var(--transition);
+      }
+
+      .footer-link:hover {
+        color: var(--primary-light);
+        transform: translateX(5px);
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+        color: var(--light);
+        transition: var(--transition);
+      }
+
+      .social-icon:hover {
+        background-color: var(--primary);
+        transform: translateY(-5px);
+      }
+
+      .copyright {
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .card,
+      .section-title {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+      .nav-item {
+        animation: slideIn 0.3s ease-out forwards;
+      } /* Responsivo - Todos os
+    ajustes para mobile */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          background: var(--light);
+          padding: 1rem;
+          border-radius: var(--border-radius);
+          box-shadow: var(--shadow);
+          margin-top: 1rem;
+        }
+        .page-title {
+          font-size: 2.5rem;
+        }
+        .blog-sidebar {
+          margin-top: 3rem;
+        }
+      }
+      @media (max-width: 768px) {
+        body {
+          padding-top: 66px;
+          font-size: 15px;
+        }
+        .display-4 {
+          font-size: 2.2rem;
+        }
+        .display-5 {
+          font-size: 2rem;
+        }
+        .card-img-top {
+          height: 200px;
+        }
+        .navbar {
+          padding: 0.5rem 0;
+        }
+        .btn {
+          padding: 0.625rem 1.25rem;
+        }
+        .card-title {
+          font-size: 1.25rem;
+        }
+        .page-title {
+          font-size: 2rem;
+        }
+        .blog-post-title {
+          font-size: 1.5rem;
+        }
+      }
+      @media (max-width: 576px) {
+        .display-4 {
+          font-size: 1.8rem;
+        }
+        .display-5 {
+          font-size: 1.6rem;
+        }
+        .card-img-top {
+          height: 180px;
+        }
+        .section-title {
+          font-size: 1.5rem;
+        }
+        .btn-lg {
+          padding: 0.75rem 1.5rem;
+          font-size: 1rem;
+        }
+        .page-title {
+          font-size: 1.8rem;
+        }
+        .blog-post-img img {
+          height: 220px;
+        }
+      }
+    </style>
+    <!-- Header -->
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <i class="lucide-pen-tool me-2"></i>
+            Manual do Lettering
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cursos.html">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="blog.html">Blog</a>
+              </li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+              <button
+                class="btn btn-link position-relative"
+                data-bs-toggle="modal"
+                data-bs-target="#searchModal"
+              >
+                <i class="lucide-search"></i>
+              </button>
+              <button class="btn btn-link position-relative">
+                <i class="lucide-shopping-cart"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
+                  >0</span
+                >
+              </button>
+              <button class="btn btn-primary rounded-pill d-none d-lg-block">
+                Entrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 page-header-content">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">Blog do Lettering</h1>
+            <p class="lead">
+              Dicas, tutoriais e inspiração para sua jornada criativa
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Blog Posts -->
+          <div class="col-lg-8">
+            <!-- Blog Post 1 -->
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <img
+                  src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80"
+                  alt="5 Dicas para Melhorar seu Lettering"
+                />
+              </div>
+              <div class="blog-post-meta">
+                <div class="author">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/32.jpg"
+                    alt="Ana Martins"
+                  />
+                  <span>Ana Martins</span>
+                </div>
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span>12 Mar 2023</span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <a href="#">5 Dicas para Melhorar seu Lettering Hoje Mesmo</a>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p>
+                  Aprenda técnicas simples que farão toda a diferença nos seus
+                  projetos de lettering. Neste artigo, compartilhamos dicas
+                  práticas que você pode aplicar imediatamente para elevar o
+                  nível das suas criações.
+                </p>
+              </div>
+              <a href="#" class="blog-post-link">
+                Ler mais <i class="lucide-arrow-right"></i>
+              </a>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <img
+                  src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Guia de Materiais"
+                />
+              </div>
+              <div class="blog-post-meta">
+                <div class="author">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/45.jpg"
+                    alt="Carlos Oliveira"
+                  />
+                  <span>Carlos Oliveira</span>
+                </div>
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span>5 Mar 2023</span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <a href="#">Guia Completo de Materiais para Iniciantes</a>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p>
+                  Descubra quais são os materiais essenciais para começar sua
+                  jornada no lettering. Neste guia, apresentamos as melhores
+                  opções para cada orçamento e objetivo, ajudando você a fazer
+                  escolhas inteligentes.
+                </p>
+              </div>
+              <a href="#" class="blog-post-link">
+                Ler mais <i class="lucide-arrow-right"></i>
+              </a>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <img
+                  src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80"
+                  alt="Como Monetizar"
+                />
+              </div>
+              <div class="blog-post-meta">
+                <div class="author">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/45.jpg"
+                    alt="Fernanda Lima"
+                  />
+                  <span>Fernanda Lima</span>
+                </div>
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span>28 Fev 2023</span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <a href="#">Como Monetizar sua Arte de Lettering em 2023</a>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p>
+                  Estratégias práticas para transformar sua paixão em uma fonte
+                  de renda. Descubra como artistas estão ganhando dinheiro com
+                  lettering e como você pode aplicar essas estratégias no seu
+                  negócio criativo.
+                </p>
+              </div>
+              <a href="#" class="blog-post-link">
+                Ler mais <i class="lucide-arrow-right"></i>
+              </a>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <img
+                  src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=80"
+                  alt="Procreate vs Illustrator"
+                />
+              </div>
+              <div class="blog-post-meta">
+                <div class="author">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="Juliana Mendes"
+                  />
+                  <span>Juliana Mendes</span>
+                </div>
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span>15 Fev 2023</span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <a href="#"
+                  >Procreate vs Illustrator: Qual o Melhor para Lettering
+                  Digital?</a
+                >
+              </h2>
+              <div class="blog-post-excerpt">
+                <p>
+                  Uma comparação detalhada entre os dois softwares mais
+                  populares para lettering digital. Analisamos prós e contras de
+                  cada um para ajudar você a escolher a ferramenta ideal para
+                  seus projetos.
+                </p>
+              </div>
+              <a href="#" class="blog-post-link">
+                Ler mais <i class="lucide-arrow-right"></i>
+              </a>
+            </article>
+
+            <!-- Pagination -->
+            <nav aria-label="Paginação do blog">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a
+                    class="page-link"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                  >
+                    <i class="lucide-chevron-left"></i>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">
+                    <i class="lucide-chevron-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <aside class="blog-sidebar">
+              <!-- Search Widget -->
+              <div class="sidebar-widget">
+                <h4 class="sidebar-widget-title">Pesquisar</h4>
+                <form>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Buscar artigos..."
+                    />
+                    <button class="btn btn-primary" type="submit">
+                      <i class="lucide-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Categories Widget -->
+              <div class="sidebar-widget">
+                <h4 class="sidebar-widget-title">Categorias</h4>
+                <ul class="sidebar-categories">
+                  <li>
+                    <a href="#">Tutoriais <span class="count">12</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Dicas & Truques <span class="count">8</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Inspiração <span class="count">6</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Materiais <span class="count">5</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Negócios <span class="count">4</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Entrevistas <span class="count">3</span></a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Popular Posts Widget -->
+              <div class="sidebar-widget">
+                <h4 class="sidebar-widget-title">Posts Populares</h4>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80"
+                      alt="Post Popular"
+                    />
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <a href="#"
+                        >5 Dicas para Melhorar seu Lettering Hoje Mesmo</a
+                      >
+                    </h5>
+                    <span class="popular-post-date">12 Mar 2023</span>
+                  </div>
+                </div>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=300&q=80"
+                      alt="Post Popular"
+                    />
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <a href="#"
+                        >Como Monetizar sua Arte de Lettering em 2023</a
+                      >
+                    </h5>
+                    <span class="popular-post-date">28 Fev 2023</span>
+                  </div>
+                </div>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=300&q=80"
+                      alt="Post Popular"
+                    />
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <a href="#">Guia Completo de Materiais para Iniciantes</a>
+                    </h5>
+                    <span class="popular-post-date">5 Mar 2023</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tags Widget -->
+              <div class="sidebar-widget">
+                <h4 class="sidebar-widget-title">Tags</h4>
+                <div class="tag-cloud">
+                  <a href="#" class="tag">Lettering</a>
+                  <a href="#" class="tag">Caligrafia</a>
+                  <a href="#" class="tag">Procreate</a>
+                  <a href="#" class="tag">Brushes</a>
+                  <a href="#" class="tag">Tipografia</a>
+                  <a href="#" class="tag">Digital</a>
+                  <a href="#" class="tag">Tradicional</a>
+                  <a href="#" class="tag">Inspiração</a>
+                  <a href="#" class="tag">Negócios</a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+              <i class="lucide-pen-tool me-2"></i>
+              Manual do Lettering
+            </a>
+            <p class="mb-4">
+              Recursos digitais premium para artistas de lettering que desejam
+              elevar sua arte ao próximo nível.
+            </p>
+            <div class="d-flex">
+              <a href="#" class="social-icon"
+                ><i class="lucide-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="lucide-facebook"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="lucide-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="lucide-twitter"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <h5 class="footer-title">Links</h5>
+            <a href="home.html" class="footer-link">Home</a>
+            <a href="produtos.html" class="footer-link">Produtos</a>
+            <a href="cursos.html" class="footer-link">Cursos</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="#" class="footer-link">Sobre nós</a>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <h5 class="footer-title">Produtos</h5>
+            <a href="#" class="footer-link">Brushes</a>
+            <a href="#" class="footer-link">Templates</a>
+            <a href="#" class="footer-link">eBooks</a>
+            <a href="#" class="footer-link">Cursos</a>
+            <a href="#" class="footer-link">Pacotes</a>
+          </div>
+          <div class="col-lg-4 col-md-4 mb-4">
+            <h5 class="footer-title">Newsletter</h5>
+            <p class="mb-3">
+              Receba dicas, tutoriais e ofertas exclusivas diretamente no seu
+              email.
+            </p>
+            <form class="mb-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Seu email"
+                  aria-label="Email"
+                />
+                <button class="btn btn-primary" type="button">Inscrever</button>
+              </div>
+            </form>
+            <small class="text-muted"
+              >Ao se inscrever, você concorda com nossa política de
+              privacidade.</small
+            >
+          </div>
+        </div>
+        <div class="text-center copyright">
+          <p>&copy; 2023 Manual do Lettering. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

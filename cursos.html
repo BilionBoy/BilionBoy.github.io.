@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos - Manual do Lettering</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/lucide-static@0.344.0/font/lucide.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Fontes melhoradas para um visual mais suave e feminino -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      :root {
+        --primary: #ff3d7f;
+        --primary-light: #ff6b9c;
+        --primary-dark: #e31b5f;
+        --secondary: #9c27b0;
+        --dark: #1a1a2e;
+        --light: #ffffff;
+        --gray: #8a8a8a;
+        --gray-light: #f8f9fa;
+        --gray-dark: #343a40;
+        --success: #28a745;
+        --pink: #ff3e96;
+        --brown: #6d4c41;
+        --green: #2e8b57;
+        --light-gray: #f8f8f8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --shadow: 0 10px 30px rgba(255, 61, 127, 0.1);
+        --shadow-dark: 0 15px 40px rgba(26, 26, 46, 0.1);
+        --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        --border-radius: 16px;
+        --border-radius-sm: 8px;
+      }
+      :root {
+        --bs-primary: var(--primary);
+        --bs-primary-rgb: 255, 61, 127;
+      } /* Sistema de tipografia melhorado */
+      body {
+        padding-top: 76px;
+        font-family: "Quicksand", sans-serif;
+        line-height: 1.7;
+        color: var(--dark);
+        overflow-x: hidden;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .display-4,
+      .display-5 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+      }
+      .lead {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        line-height: 1.6;
+      }
+      header {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .navbar {
+        padding: 1rem 0;
+      }
+      .navbar-brand {
+        font-family: "Caveat", cursive;
+        font-size: 1.8rem;
+        color: var(--primary) !important;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+      }
+      .nav-link {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.03em;
+        padding: 0.5rem 1rem !important;
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+      .nav-link:hover::after {
+        width: 80%;
+      }
+      .nav-link:hover {
+        color: var(--primary) !important;
+      } /* Hero */
+      .card {
+        border: none;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        background: var(--light);
+        overflow: hidden;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-dark);
+      }
+      .card-img-top {
+        height: 240px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+      .card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+      .card-body {
+        padding: 1.5rem;
+      }
+      .card-title {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+        color: var(--dark);
+        line-height: 1.3;
+      }
+      .card-text {
+        color: var(--gray);
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.7;
+      }
+      .badge {
+        font-family: "Montserrat", sans-serif;
+        padding: 0.5em 1em;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+      .btn {
+        font-family: "Montserrat", sans-serif;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        transition: var(--transition);
+      }
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        box-shadow: 0 4px 14px rgba(255, 61, 127, 0.3);
+      }
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 61, 127, 0.4);
+      }
+      .btn-light {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: transparent;
+        color: var(--primary);
+      }
+      .btn-light:hover {
+        background: var(--light);
+        color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+      .btn-link {
+        color: var(--gray);
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+      .btn-link:hover {
+        color: var(--primary);
+        background-color: rgba(255, 61, 127, 0.1);
+      }
+      .lucide {
+        width: 1.25em;
+        height: 1.25em;
+        vertical-align: text-bottom;
+        transition: var(--transition);
+      }
+      .display-5 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        display: inline-block;
+      }
+      .display-5::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-light);
+        border-radius: 3px;
+      }
+
+      /* Page Header */
+      .page-header {
+        background-color: var(--light-gray);
+        padding: 5rem 0 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 61, 127, 0.05) 0%,
+          rgba(156, 39, 176, 0.05) 100%
+        );
+        z-index: 0;
+      }
+
+      .page-header-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .page-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .breadcrumb {
+        background: transparent;
+        padding: 0;
+        margin-bottom: 0;
+      }
+
+      .breadcrumb-item a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb-item.active {
+        color: var(--gray);
+      }
+
+      /* Course Features */
+      .course-features {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .course-feature {
+        display: flex;
+        align-items: center;
+        color: var(--gray);
+      }
+
+      .course-feature i {
+        margin-right: 0.5rem;
+        color: var(--primary);
+      }
+
+      .course-level {
+        display: inline-block;
+        padding: 0.25rem 1rem;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .level-iniciante {
+        background-color: rgba(40, 167, 69, 0.1);
+        color: var(--success);
+      }
+
+      .level-intermediario {
+        background-color: rgba(255, 193, 7, 0.1);
+        color: var(--warning);
+      }
+
+      .level-avancado {
+        background-color: rgba(220, 53, 69, 0.1);
+        color: var(--danger);
+      }
+
+      .course-price {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .course-price .original-price {
+        text-decoration: line-through;
+        color: var(--gray);
+        font-size: 1.1rem;
+        margin-right: 0.75rem;
+      }
+
+      .course-rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .course-rating .stars {
+        color: #ffc107;
+        margin-right: 0.5rem;
+      }
+
+      .course-rating .count {
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      .course-instructor {
+        display: flex;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+
+      .instructor-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 1rem;
+      }
+
+      .instructor-name {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .instructor-title {
+        font-size: 0.85rem;
+        color: var(--gray);
+      }
+
+      .filter-btn {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: var(--light);
+        color: var(--dark);
+        border-radius: 30px;
+        padding: 0.5rem 1.25rem;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background-color: var(--primary);
+        color: var(--light);
+        border-color: var(--primary);
+      }
+
+      footer {
+        background-color: var(--dark);
+        color: var(--light);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: var(--light);
+      }
+
+      .footer-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.75rem;
+        transition: var(--transition);
+      }
+
+      .footer-link:hover {
+        color: var(--primary-light);
+        transform: translateX(5px);
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+        color: var(--light);
+        transition: var(--transition);
+      }
+
+      .social-icon:hover {
+        background-color: var(--primary);
+        transform: translateY(-5px);
+      }
+
+      .copyright {
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .card,
+      .section-title {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+      .nav-item {
+        animation: slideIn 0.3s ease-out forwards;
+      } /* Responsivo - Todos os
+    ajustes para mobile */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          background: var(--light);
+          padding: 1rem;
+          border-radius: var(--border-radius);
+          box-shadow: var(--shadow);
+          margin-top: 1rem;
+        }
+        .page-title {
+          font-size: 2.5rem;
+        }
+      }
+      @media (max-width: 768px) {
+        body {
+          padding-top: 66px;
+          font-size: 15px;
+        }
+        .display-4 {
+          font-size: 2.2rem;
+        }
+        .display-5 {
+          font-size: 2rem;
+        }
+        .card-img-top {
+          height: 200px;
+        }
+        .navbar {
+          padding: 0.5rem 0;
+        }
+        .btn {
+          padding: 0.625rem 1.25rem;
+        }
+        .card-title {
+          font-size: 1.25rem;
+        }
+        .page-title {
+          font-size: 2rem;
+        }
+        .course-features {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+      }
+      @media (max-width: 576px) {
+        .display-4 {
+          font-size: 1.8rem;
+        }
+        .display-5 {
+          font-size: 1.6rem;
+        }
+        .card-img-top {
+          height: 180px;
+        }
+        .section-title {
+          font-size: 1.5rem;
+        }
+        .btn-lg {
+          padding: 0.75rem 1.5rem;
+          font-size: 1rem;
+        }
+        .page-title {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+    <!-- Header -->
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <i class="lucide-pen-tool me-2"></i>
+            Manual do Lettering
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="cursos.html">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+              <button
+                class="btn btn-link position-relative"
+                data-bs-toggle="modal"
+                data-bs-target="#searchModal"
+              >
+                <i class="lucide-search"></i>
+              </button>
+              <button class="btn btn-link position-relative">
+                <i class="lucide-shopping-cart"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
+                  >0</span
+                >
+              </button>
+              <button class="btn btn-primary rounded-pill d-none d-lg-block">
+                Entrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 page-header-content">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Cursos
+                </li>
+              </ol>
+            </nav>
+            <h1 class="page-title">Cursos de Lettering</h1>
+            <p class="lead">
+              Aprenda com os melhores artistas e eleve suas habilidades ao
+              próximo nível
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="py-4">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-between mb-4"
+        >
+          <div>
+            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+          </div>
+          <div class="d-flex flex-wrap">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Iniciante</button>
+            <button class="filter-btn">Intermediário</button>
+            <button class="filter-btn">Avançado</button>
+            <button class="filter-btn">Digital</button>
+            <button class="filter-btn">Tradicional</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="py-4">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1611532736576-1865ce24e589?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Curso Completo de Lettering"
+              />
+              <div class="card-body">
+                <span class="course-level level-iniciante">Iniciante</span>
+                <h5 class="card-title">Curso Completo de Lettering</h5>
+                <div class="course-rating">
+                  <div class="stars">
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                  </div>
+                  <span class="count">(127 avaliações)</span>
+                </div>
+                <p class="card-text">
+                  Do básico ao avançado: aprenda todas as técnicas essenciais do
+                  lettering digital.
+                </p>
+                <div class="course-features">
+                  <div class="course-feature">
+                    <i class="lucide-play"></i>
+                    <span>42 aulas</span>
+                  </div>
+                  <div class="course-feature">
+                    <i class="lucide-clock"></i>
+                    <span>8 horas</span>
+                  </div>
+                </div>
+                <div class="course-instructor">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/32.jpg"
+                    alt="Ana Martins"
+                    class="instructor-avatar"
+                  />
+                  <div>
+                    <h6 class="instructor-name">Ana Martins</h6>
+                    <p class="instructor-title">
+                      Designer & Especialista em Lettering
+                    </p>
+                  </div>
+                </div>
+                <div class="course-price mt-3">
+                  <span class="original-price">R$ 397</span>
+                  <span>R$ 297</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Lettering Tradicional para Iniciantes"
+              />
+              <div class="card-body">
+                <span class="course-level level-iniciante">Iniciante</span>
+                <h5 class="card-title">
+                  Lettering Tradicional para Iniciantes
+                </h5>
+                <div class="course-rating">
+                  <div class="stars">
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star-half"></i>
+                  </div>
+                  <span class="count">(98 avaliações)</span>
+                </div>
+                <p class="card-text">
+                  Aprenda a criar letras bonitas usando apenas papel e caneta.
+                  Técnicas essenciais para iniciantes.
+                </p>
+                <div class="course-features">
+                  <div class="course-feature">
+                    <i class="lucide-play"></i>
+                    <span>36 aulas</span>
+                  </div>
+                  <div class="course-feature">
+                    <i class="lucide-clock"></i>
+                    <span>6 horas</span>
+                  </div>
+                </div>
+                <div class="course-instructor">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/45.jpg"
+                    alt="Carlos Oliveira"
+                    class="instructor-avatar"
+                  />
+                  <div>
+                    <h6 class="instructor-name">Carlos Oliveira</h6>
+                    <p class="instructor-title">Calígrafo & Artista</p>
+                  </div>
+                </div>
+                <div class="course-price mt-3">
+                  <span class="original-price">R$ 247</span>
+                  <span>R$ 197</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Lettering Digital no Procreate"
+              />
+              <div class="card-body">
+                <span class="course-level level-intermediario"
+                  >Intermediário</span
+                >
+                <h5 class="card-title">Lettering Digital no Procreate</h5>
+                <div class="course-rating">
+                  <div class="stars">
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                  </div>
+                  <span class="count">(215 avaliações)</span>
+                </div>
+                <p class="card-text">
+                  Domine o Procreate para criar lettering digital profissional.
+                  Inclui brushes exclusivos.
+                </p>
+                <div class="course-features">
+                  <div class="course-feature">
+                    <i class="lucide-play"></i>
+                    <span>54 aulas</span>
+                  </div>
+                  <div class="course-feature">
+                    <i class="lucide-clock"></i>
+                    <span>10 horas</span>
+                  </div>
+                </div>
+                <div class="course-instructor">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="Juliana Mendes"
+                    class="instructor-avatar"
+                  />
+                  <div>
+                    <h6 class="instructor-name">Juliana Mendes</h6>
+                    <p class="instructor-title">
+                      Artista Digital & Ilustradora
+                    </p>
+                  </div>
+                </div>
+                <div class="course-price mt-3">
+                  <span class="original-price">R$ 347</span>
+                  <span>R$ 297</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Lettering Avançado: Composições Complexas"
+              />
+              <div class="card-body">
+                <span class="course-level level-avancado">Avançado</span>
+                <h5 class="card-title">
+                  Lettering Avançado: Composições Complexas
+                </h5>
+                <div class="course-rating">
+                  <div class="stars">
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star-half"></i>
+                  </div>
+                  <span class="count">(87 avaliações)</span>
+                </div>
+                <p class="card-text">
+                  Crie composições complexas e projetos profissionais de
+                  lettering. Para artistas experientes.
+                </p>
+                <div class="course-features">
+                  <div class="course-feature">
+                    <i class="lucide-play"></i>
+                    <span>48 aulas</span>
+                  </div>
+                  <div class="course-feature">
+                    <i class="lucide-clock"></i>
+                    <span>12 horas</span>
+                  </div>
+                </div>
+                <div class="course-instructor">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    alt="Ricardo Alves"
+                    class="instructor-avatar"
+                  />
+                  <div>
+                    <h6 class="instructor-name">Ricardo Alves</h6>
+                    <p class="instructor-title">Diretor de Arte & Tipógrafo</p>
+                  </div>
+                </div>
+                <div class="course-price mt-3">
+                  <span class="original-price">R$ 497</span>
+                  <span>R$ 397</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Lettering para Negócios"
+              />
+              <div class="card-body">
+                <span class="course-level level-intermediario"
+                  >Intermediário</span
+                >
+                <h5 class="card-title">Lettering para Negócios</h5>
+                <div class="course-rating">
+                  <div class="stars">
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                  </div>
+                  <span class="count">(156 avaliações)</span>
+                </div>
+                <p class="card-text">
+                  Aprenda a monetizar suas habilidades de lettering e conquistar
+                  clientes para seus projetos.
+                </p>
+                <div class="course-features">
+                  <div class="course-feature">
+                    <i class="lucide-play"></i>
+                    <span>38 aulas</span>
+                  </div>
+                  <div class="course-feature">
+                    <i class="lucide-clock"></i>
+                    <span>7 horas</span>
+                  </div>
+                </div>
+                <div class="course-instructor">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/45.jpg"
+                    alt="Fernanda Lima"
+                    class="instructor-avatar"
+                  />
+                  <div>
+                    <h6 class="instructor-name">Fernanda Lima</h6>
+                    <p class="instructor-title">Empreendedora & Artista</p>
+                  </div>
+                </div>
+                <div class="course-price mt-3">
+                  <span class="original-price">R$ 397</span>
+                  <span>R$ 297</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Caligrafia Moderna"
+              />
+              <div class="card-body">
+                <span class="course-level level-iniciante">Iniciante</span>
+                <h5 class="card-title">Caligrafia Moderna</h5>
+                <div class="course-rating">
+                  <div class="stars">
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                  </div>
+                  <span class="count">(178 avaliações)</span>
+                </div>
+                <p class="card-text">
+                  Aprenda os fundamentos da caligrafia moderna e desenvolva seu
+                  próprio estilo de escrita.
+                </p>
+                <div class="course-features">
+                  <div class="course-feature">
+                    <i class="lucide-play"></i>
+                    <span>32 aulas</span>
+                  </div>
+                  <div class="course-feature">
+                    <i class="lucide-clock"></i>
+                    <span>5 horas</span>
+                  </div>
+                </div>
+                <div class="course-instructor">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/22.jpg"
+                    alt="Beatriz Santos"
+                    class="instructor-avatar"
+                  />
+                  <div>
+                    <h6 class="instructor-name">Beatriz Santos</h6>
+                    <p class="instructor-title">Calígrafa & Professora</p>
+                  </div>
+                </div>
+                <div class="course-price mt-3">
+                  <span class="original-price">R$ 247</span>
+                  <span>R$ 197</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+              <i class="lucide-pen-tool me-2"></i>
+              Manual do Lettering
+            </a>
+            <p class="mb-4">
+              Recursos digitais premium para artistas de lettering que desejam
+              elevar sua arte ao próximo nível.
+            </p>
+            <div class="d-flex">
+              <a href="#" class="social-icon"
+                ><i class="lucide-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="lucide-facebook"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="lucide-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="lucide-twitter"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <h5 class="footer-title">Links</h5>
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="produtos.html" class="footer-link">Produtos</a>
+            <a href="cursos.html" class="footer-link">Cursos</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="#" class="footer-link">Sobre nós</a>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <h5 class="footer-title">Produtos</h5>
+            <a href="#" class="footer-link">Brushes</a>
+            <a href="#" class="footer-link">Templates</a>
+            <a href="#" class="footer-link">eBooks</a>
+            <a href="#" class="footer-link">Cursos</a>
+            <a href="#" class="footer-link">Pacotes</a>
+          </div>
+          <div class="col-lg-4 col-md-4 mb-4">
+            <h5 class="footer-title">Newsletter</h5>
+            <p class="mb-3">
+              Receba dicas, tutoriais e ofertas exclusivas diretamente no seu
+              email.
+            </p>
+            <form class="mb-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Seu email"
+                  aria-label="Email"
+                />
+                <button class="btn btn-primary" type="button">Inscrever</button>
+              </div>
+            </form>
+            <small class="text-muted"
+              >Ao se inscrever, você concorda com nossa política de
+              privacidade.</small
+            >
+          </div>
+        </div>
+        <div class="text-center copyright">
+          <p>&copy; 2023 Manual do Lettering. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

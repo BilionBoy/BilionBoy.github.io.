@@ -1,0 +1,2463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual do Lettering - Tudo sobre Arte em Letras</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/lucide-static@0.344.0/font/lucide.css"
+      rel="stylesheet"
+    />
+    <!-- Fontes melhoradas para um visual mais suave e feminino -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #ff3d7f;
+        --primary-light: #ff6b9c;
+        --primary-dark: #e31b5f;
+        --secondary: #9c27b0;
+        --dark: #1a1a2e;
+        --light: #ffffff;
+        --gray: #8a8a8a;
+        --gray-light: #f8f9fa;
+        --gray-dark: #343a40;
+        --success: #28a745;
+        --pink: #ff3e96;
+        --brown: #6d4c41;
+        --green: #2e8b57;
+        --light-gray: #f8f8f8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --shadow: 0 10px 30px rgba(255, 61, 127, 0.1);
+        --shadow-dark: 0 15px 40px rgba(26, 26, 46, 0.1);
+        --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        --border-radius: 16px;
+        --border-radius-sm: 8px;
+      }
+      :root {
+        --bs-primary: var(--primary);
+        --bs-primary-rgb: 255, 61, 127;
+      }
+
+      /* Sistema de tipografia melhorado */
+      body {
+        padding-top: 76px;
+        font-family: "Quicksand", sans-serif;
+        line-height: 1.7;
+        color: var(--dark);
+        overflow-x: hidden;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        scroll-behavior: smooth;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .display-4,
+      .display-5 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+      }
+
+      .lead {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        line-height: 1.6;
+      }
+
+      /* Header */
+      header {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .navbar {
+        padding: 1rem 0;
+      }
+
+      .navbar-brand {
+        font-family: "Caveat", cursive;
+        font-size: 1.8rem;
+        color: var(--primary) !important;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+      }
+
+      .nav-link {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.03em;
+        padding: 0.5rem 1rem !important;
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after {
+        width: 80%;
+      }
+
+      .nav-link:hover {
+        color: var(--primary) !important;
+      }
+
+      /* Cards */
+      .card {
+        border: none;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        background: var(--light);
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-dark);
+      }
+
+      .card-img-top {
+        height: 240px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .card-title {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+        color: var(--dark);
+        line-height: 1.3;
+      }
+
+      .card-text {
+        color: var(--gray);
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.7;
+      }
+
+      /* Badges & Buttons */
+      .badge {
+        font-family: "Montserrat", sans-serif;
+        padding: 0.5em 1em;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+
+      .btn {
+        font-family: "Montserrat", sans-serif;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        transition: var(--transition);
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        box-shadow: 0 4px 14px rgba(255, 61, 127, 0.3);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 61, 127, 0.4);
+      }
+
+      .btn-light {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: transparent;
+        color: var(--primary);
+      }
+
+      .btn-light:hover {
+        background: var(--light);
+        color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .btn-link {
+        color: var(--gray);
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+
+      .btn-link:hover {
+        color: var(--primary);
+        background-color: rgba(255, 61, 127, 0.1);
+      }
+
+      /* Icons */
+      .lucide {
+        width: 1.25em;
+        height: 1.25em;
+        vertical-align: text-bottom;
+        transition: var(--transition);
+      }
+
+      /* Section Titles */
+      .display-5 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .display-5::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-light);
+        border-radius: 3px;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-color: var(--light-gray);
+        padding: 6rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 61, 127, 0.05) 0%,
+          rgba(156, 39, 176, 0.05) 100%
+        );
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: var(--gray);
+      }
+
+      .hero-img {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-img img {
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-dark);
+      }
+
+      /* Features Section */
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: rgba(255, 61, 127, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+        transition: var(--transition);
+      }
+
+      .feature-icon i {
+        font-size: 1.75rem;
+      }
+
+      .feature-card:hover .feature-icon {
+        background-color: var(--primary);
+        color: var(--light);
+        transform: translateY(-5px);
+      }
+
+      .feature-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Page Header */
+      .page-header {
+        background-color: var(--light-gray);
+        padding: 5rem 0 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 61, 127, 0.05) 0%,
+          rgba(156, 39, 176, 0.05) 100%
+        );
+        z-index: 0;
+      }
+
+      .page-header-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .page-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .breadcrumb {
+        background: transparent;
+        padding: 0;
+        margin-bottom: 0;
+      }
+
+      .breadcrumb-item a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .breadcrumb-item.active {
+        color: var(--gray);
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .testimonial-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        object-fit: cover;
+        border: 3px solid var(--primary-light);
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .testimonial-text::before,
+      .testimonial-text::after {
+        content: '"';
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        color: rgba(255, 61, 127, 0.1);
+        position: absolute;
+      }
+
+      .testimonial-text::before {
+        top: -20px;
+        left: -10px;
+      }
+
+      .testimonial-text::after {
+        bottom: -40px;
+        right: -10px;
+      }
+
+      .testimonial-name {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-title {
+        font-size: 0.85rem;
+        color: var(--gray);
+      }
+
+      /* Call to Action */
+      .cta {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        padding: 5rem 0;
+        color: var(--light);
+        text-align: center;
+      }
+
+      .cta-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-text {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      /* Course Features */
+      .course-features {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .course-feature {
+        display: flex;
+        align-items: center;
+        color: var(--gray);
+      }
+
+      .course-feature i {
+        margin-right: 0.5rem;
+        color: var(--primary);
+      }
+
+      .course-level {
+        display: inline-block;
+        padding: 0.25rem 1rem;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .level-iniciante {
+        background-color: rgba(40, 167, 69, 0.1);
+        color: var(--success);
+      }
+
+      .level-intermediario {
+        background-color: rgba(255, 193, 7, 0.1);
+        color: var(--warning);
+      }
+
+      .level-avancado {
+        background-color: rgba(220, 53, 69, 0.1);
+        color: var(--danger);
+      }
+
+      .course-price {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .course-price .original-price {
+        text-decoration: line-through;
+        color: var(--gray);
+        font-size: 1.1rem;
+        margin-right: 0.75rem;
+      }
+
+      .course-rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .course-rating .stars {
+        color: #ffc107;
+        margin-right: 0.5rem;
+      }
+
+      .course-rating .count {
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      .course-instructor {
+        display: flex;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+
+      .instructor-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 1rem;
+      }
+
+      .instructor-name {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .instructor-title {
+        font-size: 0.85rem;
+        color: var(--gray);
+      }
+
+      /* Filter Buttons */
+      .filter-btn {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: var(--light);
+        color: var(--dark);
+        border-radius: 30px;
+        padding: 0.5rem 1.25rem;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background-color: var(--primary);
+        color: var(--light);
+        border-color: var(--primary);
+      }
+
+      /* Product Card */
+      .product-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10;
+      }
+
+      .product-actions {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        z-index: 10;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: var(--transition);
+      }
+
+      .product-card:hover .product-actions {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .product-action-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--light);
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+      }
+
+      .product-action-btn:hover {
+        background-color: var(--primary);
+        color: var(--light);
+        transform: translateY(-3px);
+      }
+
+      .product-price {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .product-price .original-price {
+        text-decoration: line-through;
+        color: var(--gray);
+        font-size: 1rem;
+        margin-right: 0.75rem;
+      }
+
+      /* Product Categories */
+      .category-card {
+        position: relative;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .category-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .category-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.6)
+        );
+        z-index: 1;
+        transition: var(--transition);
+      }
+
+      .category-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 1rem;
+        color: var(--light);
+      }
+
+      .category-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .category-count {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      .category-card:hover .category-img {
+        transform: scale(1.1);
+      }
+
+      .category-card:hover .category-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 61, 127, 0.4),
+          rgba(156, 39, 176, 0.7)
+        );
+      }
+
+      /* Blog Styles */
+      .blog-post {
+        margin-bottom: 2.5rem;
+      }
+
+      .blog-post-img {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+
+      .blog-post-img img {
+        transition: var(--transition);
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .blog-post:hover .blog-post-img img {
+        transform: scale(1.05);
+      }
+
+      .blog-post-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--gray);
+      }
+
+      .blog-post-meta .author {
+        display: flex;
+        align-items: center;
+        margin-right: 1.5rem;
+      }
+
+      .blog-post-meta .author img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .blog-post-meta .date {
+        display: flex;
+        align-items: center;
+      }
+
+      .blog-post-meta .date i {
+        margin-right: 0.5rem;
+      }
+
+      .blog-post-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        transition: var(--transition);
+      }
+
+      .blog-post-title a {
+        color: var(--dark);
+        text-decoration: none;
+      }
+
+      .blog-post-title a:hover {
+        color: var(--primary);
+      }
+
+      .blog-post-excerpt {
+        margin-bottom: 1.5rem;
+        color: var(--gray);
+      }
+
+      .blog-post-link {
+        font-weight: 600;
+        color: var(--primary);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .blog-post-link i {
+        margin-left: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .blog-post-link:hover {
+        color: var(--primary-dark);
+      }
+
+      .blog-post-link:hover i {
+        transform: translateX(5px);
+      }
+
+      .blog-sidebar {
+        position: sticky;
+        top: 100px;
+      }
+
+      .sidebar-widget {
+        background-color: var(--light);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .sidebar-widget-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .sidebar-categories {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar-categories li {
+        margin-bottom: 0.75rem;
+      }
+
+      .sidebar-categories a {
+        color: var(--dark);
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        transition: var(--transition);
+      }
+
+      .sidebar-categories a:hover {
+        color: var(--primary);
+        transform: translateX(5px);
+      }
+
+      .sidebar-categories .count {
+        background-color: rgba(255, 61, 127, 0.1);
+        color: var(--primary);
+        border-radius: 30px;
+        padding: 0.1rem 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      .popular-post {
+        display: flex;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .popular-post:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .popular-post-img {
+        width: 80px;
+        height: 80px;
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
+        margin-right: 1rem;
+      }
+
+      .popular-post-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .popular-post:hover .popular-post-img img {
+        transform: scale(1.1);
+      }
+
+      .popular-post-content {
+        flex: 1;
+      }
+
+      .popular-post-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .popular-post-title a {
+        color: var(--dark);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .popular-post-title a:hover {
+        color: var(--primary);
+      }
+
+      .popular-post-date {
+        font-size: 0.8rem;
+        color: var(--gray);
+      }
+
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        background-color: var(--light-gray);
+        color: var(--gray);
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .tag:hover {
+        background-color: var(--primary);
+        color: var(--light);
+      }
+
+      /* Pagination */
+      .pagination {
+        margin-top: 3rem;
+      }
+
+      .page-link {
+        border: none;
+        color: var(--dark);
+        margin: 0 0.25rem;
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+      }
+
+      .page-link:hover {
+        background-color: var(--primary);
+        color: var(--light);
+      }
+
+      .page-item.active .page-link {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: var(--light);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: var(--light);
+      }
+
+      .footer-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.75rem;
+        transition: var(--transition);
+      }
+
+      .footer-link:hover {
+        color: var(--primary-light);
+        transform: translateX(5px);
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+        color: var(--light);
+        transition: var(--transition);
+      }
+
+      .social-icon:hover {
+        background-color: var(--primary);
+        transform: translateY(-5px);
+      }
+
+      .copyright {
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .card,
+      .section-title {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+
+      .nav-item {
+        animation: slideIn 0.3s ease-out forwards;
+      }
+
+      /* Responsivo - Todos os ajustes para mobile */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          background: var(--light);
+          padding: 1rem;
+          border-radius: var(--border-radius);
+          box-shadow: var(--shadow);
+          margin-top: 1rem;
+        }
+        .page-title {
+          font-size: 2.5rem;
+        }
+        .blog-sidebar {
+          margin-top: 3rem;
+        }
+        .hero-title {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding-top: 66px;
+          font-size: 15px;
+        }
+        .display-4 {
+          font-size: 2.2rem;
+        }
+        .display-5 {
+          font-size: 2rem;
+        }
+        .card-img-top {
+          height: 200px;
+        }
+        .navbar {
+          padding: 0.5rem 0;
+        }
+        .btn {
+          padding: 0.625rem 1.25rem;
+        }
+        .card-title {
+          font-size: 1.25rem;
+        }
+        .page-title {
+          font-size: 2rem;
+        }
+        .blog-post-title {
+          font-size: 1.5rem;
+        }
+        .hero-title {
+          font-size: 2.2rem;
+        }
+        .course-features {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+        .category-card {
+          height: 160px;
+        }
+        .category-title {
+          font-size: 1.25rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .display-4 {
+          font-size: 1.8rem;
+        }
+        .display-5 {
+          font-size: 1.6rem;
+        }
+        .card-img-top {
+          height: 180px;
+        }
+        .section-title {
+          font-size: 1.5rem;
+        }
+        .btn-lg {
+          padding: 0.75rem 1.5rem;
+          font-size: 1rem;
+        }
+        .page-title {
+          font-size: 1.8rem;
+        }
+        .blog-post-img img {
+          height: 220px;
+        }
+        .hero-title {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="#home">
+            <i class="lucide-pen-tool me-2"></i>
+            Manual do Lettering
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#produtos">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cursos">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#blog">Blog</a>
+              </li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+              <button
+                class="btn btn-link position-relative"
+                data-bs-toggle="modal"
+                data-bs-target="#searchModal"
+              >
+                <i class="lucide-search"></i>
+              </button>
+              <button class="btn btn-link position-relative">
+                <i class="lucide-shopping-cart"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
+                  >0</span
+                >
+              </button>
+              <button class="btn btn-primary rounded-pill d-none d-lg-block">
+                Entrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="div">
+      <img
+        class="group-2-7-img"
+        src="https://organizandoavida.com/wp-content/uploads/2025/01/1.png"
+      />
+    </div>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <h1 class="hero-title">
+              Transforme suas letras em verdadeiras obras de arte
+            </h1>
+            <p class="hero-subtitle lead">
+              Recursos, cursos e inspiração para artistas de lettering que
+              desejam elevar sua arte ao próximo nível.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#produtos" class="btn btn-primary btn-lg rounded-pill"
+                >Ver Produtos</a
+              >
+              <a href="#cursos" class="btn btn-light btn-lg rounded-pill"
+                >Explorar Cursos</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 hero-img mt-5 mt-lg-0">
+            <img
+              src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80"
+              alt="Lettering Art"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="section-title text-center">
+          <h2 class="display-5">Por que escolher o Manual do Lettering?</h2>
+          <p class="lead">
+            Recursos premium criados por artistas para artistas
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 text-center p-4 feature-card">
+              <div class="feature-icon mx-auto">
+                <i class="lucide-star"></i>
+              </div>
+              <h3 class="feature-title">Qualidade Premium</h3>
+              <p>
+                Todos os nossos recursos são criados com atenção meticulosa aos
+                detalhes para garantir a mais alta qualidade.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 text-center p-4 feature-card">
+              <div class="feature-icon mx-auto">
+                <i class="lucide-book-open"></i>
+              </div>
+              <h3 class="feature-title">Conteúdo Educativo</h3>
+              <p>
+                Aprenda com os melhores artistas do mercado através de cursos
+                detalhados e tutoriais passo a passo.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 text-center p-4 feature-card">
+              <div class="feature-icon mx-auto">
+                <i class="lucide-users"></i>
+              </div>
+              <h3 class="feature-title">Comunidade Ativa</h3>
+              <p>
+                Faça parte de uma comunidade vibrante de artistas que
+                compartilham dicas, inspirações e feedback.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="section-title text-center">
+          <h2 class="display-5">Produtos em Destaque</h2>
+          <p class="lead">Recursos digitais premium para elevar sua arte</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 product-card">
+              <span class="badge bg-danger product-badge">-20%</span>
+              <div class="product-actions">
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-heart"></i>
+                </a>
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-eye"></i>
+                </a>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Pack de Brushes Premium"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <span class="badge bg-primary">Brushes</span>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                    </div>
+                    <span class="count">(42)</span>
+                  </div>
+                </div>
+                <h5 class="card-title">Pack de Brushes Premium</h5>
+                <p class="card-text">
+                  100+ pincéis profissionais para Procreate, perfeitos para
+                  lettering digital.
+                </p>
+                <div class="product-price">
+                  <span class="original-price">R$ 127</span>
+                  <span>R$ 97</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 product-card">
+              <div class="product-actions">
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-heart"></i>
+                </a>
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-eye"></i>
+                </a>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="eBook Lettering Moderno"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <span class="badge bg-primary">eBook</span>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star-half"></i>
+                    </div>
+                    <span class="count">(28)</span>
+                  </div>
+                </div>
+                <h5 class="card-title">eBook Lettering Moderno</h5>
+                <p class="card-text">
+                  Guia completo com técnicas modernas e exercícios práticos de
+                  lettering.
+                </p>
+                <div class="product-price">
+                  <span>R$ 47</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 product-card">
+              <span class="badge bg-success product-badge">Novo</span>
+              <div class="product-actions">
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-heart"></i>
+                </a>
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-eye"></i>
+                </a>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Templates de Composição"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <span class="badge bg-primary">Templates</span>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                    </div>
+                    <span class="count">(19)</span>
+                  </div>
+                </div>
+                <h5 class="card-title">Templates de Composição</h5>
+                <p class="card-text">
+                  10 templates profissionais para criar composições de lettering
+                  equilibradas e harmoniosas.
+                </p>
+                <div class="product-price">
+                  <span>R$ 67</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#produtos" class="btn btn-primary rounded-pill"
+            >Ver Todos os Produtos</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+      <div class="container">
+        <div class="section-title text-center">
+          <h2 class="display-5">O que nossos clientes dizem</h2>
+          <p class="lead">
+            Histórias de sucesso de artistas que usam nossos recursos
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 testimonial-card">
+              <img
+                src="https://randomuser.me/api/portraits/women/32.jpg"
+                alt="Ana Martins"
+                class="testimonial-img"
+              />
+              <p class="testimonial-text">
+                Os brushes do Manual do Lettering transformaram completamente
+                meu trabalho. A qualidade e versatilidade são incomparáveis!
+              </p>
+              <h5 class="testimonial-name">Ana Martins</h5>
+              <p class="testimonial-title">Designer & Calígrafa</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 testimonial-card">
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                alt="Carlos Oliveira"
+                class="testimonial-img"
+              />
+              <p class="testimonial-text">
+                O curso completo de lettering me deu todas as ferramentas
+                necessárias para iniciar minha carreira como artista freelancer.
+              </p>
+              <h5 class="testimonial-name">Carlos Oliveira</h5>
+              <p class="testimonial-title">Artista Freelancer</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 testimonial-card">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Juliana Mendes"
+                class="testimonial-img"
+              />
+              <p class="testimonial-text">
+                Os templates de composição economizaram horas do meu processo
+                criativo. Agora consigo entregar projetos muito mais rápido!
+              </p>
+              <h5 class="testimonial-name">Juliana Mendes</h5>
+              <p class="testimonial-title">Ilustradora & Designer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="cta-title">Pronto para elevar sua arte?</h2>
+            <p class="cta-text">
+              Junte-se a milhares de artistas que estão transformando sua paixão
+              em profissão com o Manual do Lettering.
+            </p>
+            <a href="#produtos" class="btn btn-light btn-lg rounded-pill"
+              >Começar Agora</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS SECTION -->
+    <section id="produtos" class="py-5">
+      <div class="container">
+        <div class="section-title text-center">
+          <h2 class="display-5">Produtos para Lettering</h2>
+          <p class="lead">
+            Recursos digitais premium para elevar sua arte ao próximo nível
+          </p>
+        </div>
+
+        <!-- Categories Section -->
+        <div class="row mb-5">
+          <div class="col-lg-3 col-md-6">
+            <div class="category-card">
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+                alt="Brushes"
+                class="category-img"
+              />
+              <div class="category-overlay"></div>
+              <div class="category-content">
+                <h3 class="category-title">Brushes</h3>
+                <p class="category-count">12 produtos</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="category-card">
+              <img
+                src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80"
+                alt="eBooks"
+                class="category-img"
+              />
+              <div class="category-overlay"></div>
+              <div class="category-content">
+                <h3 class="category-title">eBooks</h3>
+                <p class="category-count">8 produtos</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="category-card">
+              <img
+                src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80"
+                alt="Templates"
+                class="category-img"
+              />
+              <div class="category-overlay"></div>
+              <div class="category-content">
+                <h3 class="category-title">Templates</h3>
+                <p class="category-count">15 produtos</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="category-card">
+              <img
+                src="https://images.unsplash.com/photo-1611532736576-1865ce24e589?auto=format&fit=crop&w=800&q=80"
+                alt="Cursos"
+                class="category-img"
+              />
+              <div class="category-overlay"></div>
+              <div class="category-content">
+                <h3 class="category-title">Cursos</h3>
+                <p class="category-count">6 produtos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-between mb-4"
+        >
+          <div>
+            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+          </div>
+          <div class="d-flex flex-wrap">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Brushes</button>
+            <button class="filter-btn">eBooks</button>
+            <button class="filter-btn">Templates</button>
+            <button class="filter-btn">Cursos</button>
+            <button class="filter-btn">Pacotes</button>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="row g-4">
+          <!-- Product 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 product-card">
+              <span class="badge bg-danger product-badge">-20%</span>
+              <div class="product-actions">
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-heart"></i>
+                </a>
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-eye"></i>
+                </a>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Pack de Brushes Premium"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <span class="badge bg-primary">Brushes</span>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                    </div>
+                    <span class="count">(42)</span>
+                  </div>
+                </div>
+                <h5 class="card-title">Pack de Brushes Premium</h5>
+                <p class="card-text">
+                  100+ pincéis profissionais para Procreate, perfeitos para
+                  lettering digital.
+                </p>
+                <div class="product-price">
+                  <span class="original-price">R$ 127</span>
+                  <span>R$ 97</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 product-card">
+              <div class="product-actions">
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-heart"></i>
+                </a>
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-eye"></i>
+                </a>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="eBook Lettering Moderno"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <span class="badge bg-primary">eBook</span>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star-half"></i>
+                    </div>
+                    <span class="count">(28)</span>
+                  </div>
+                </div>
+                <h5 class="card-title">eBook Lettering Moderno</h5>
+                <p class="card-text">
+                  Guia completo com técnicas modernas e exercícios práticos de
+                  lettering.
+                </p>
+                <div class="product-price">
+                  <span>R$ 47</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 product-card">
+              <span class="badge bg-success product-badge">Novo</span>
+              <div class="product-actions">
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-heart"></i>
+                </a>
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-eye"></i>
+                </a>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Templates de Composição"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <span class="badge bg-primary">Templates</span>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                    </div>
+                    <span class="count">(19)</span>
+                  </div>
+                </div>
+                <h5 class="card-title">Templates de Composição</h5>
+                <p class="card-text">
+                  10 templates profissionais para criar composições de lettering
+                  equilibradas e harmoniosas.
+                </p>
+                <div class="product-price">
+                  <span>R$ 67</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 product-card">
+              <div class="product-actions">
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-heart"></i>
+                </a>
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-eye"></i>
+                </a>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Kit de Brushes para Caligrafia"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <span class="badge bg-primary">Brushes</span>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star-half"></i>
+                    </div>
+                    <span class="count">(34)</span>
+                  </div>
+                </div>
+                <h5 class="card-title">Kit de Brushes para Caligrafia</h5>
+                <p class="card-text">
+                  50 pincéis especiais para caligrafia moderna no Procreate, com
+                  diferentes texturas e pressões.
+                </p>
+                <div class="product-price">
+                  <span>R$ 77</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 product-card">
+              <span class="badge bg-warning product-badge">Bestseller</span>
+              <div class="product-actions">
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-heart"></i>
+                </a>
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-eye"></i>
+                </a>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1611532736576-1865ce24e589?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Curso Completo de Lettering"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <span class="badge bg-primary">Curso</span>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                    </div>
+                    <span class="count">(127)</span>
+                  </div>
+                </div>
+                <h5 class="card-title">Curso Completo de Lettering</h5>
+                <p class="card-text">
+                  Do básico ao avançado: aprenda todas as técnicas essenciais do
+                  lettering digital.
+                </p>
+                <div class="product-price">
+                  <span class="original-price">R$ 397</span>
+                  <span>R$ 297</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 product-card">
+              <div class="product-actions">
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-heart"></i>
+                </a>
+                <a href="#" class="product-action-btn">
+                  <i class="lucide-eye"></i>
+                </a>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="eBook Monetizando seu Lettering"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <span class="badge bg-primary">eBook</span>
+                  <div class="product-rating">
+                    <div class="stars">
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                      <i class="lucide-star"></i>
+                    </div>
+                    <span class="count">(56)</span>
+                  </div>
+                </div>
+                <h5 class="card-title">eBook Monetizando seu Lettering</h5>
+                <p class="card-text">
+                  Guia prático para transformar sua arte em um negócio
+                  lucrativo, com estratégias de marketing.
+                </p>
+                <div class="product-price">
+                  <span>R$ 57</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Paginação de produtos" class="mt-5">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                <i class="lucide-chevron-left"></i>
+              </a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                <i class="lucide-chevron-right"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- CURSOS SECTION -->
+    <section id="cursos" class="py-5 bg-light">
+      <div class="container">
+        <div class="section-title text-center">
+          <h2 class="display-5">Cursos de Lettering</h2>
+          <p class="lead">
+            Aprenda com os melhores artistas e eleve suas habilidades ao próximo
+            nível
+          </p>
+        </div>
+
+        <!-- Filters Section -->
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-between mb-4"
+        >
+          <div>
+            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+          </div>
+          <div class="d-flex flex-wrap">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Iniciante</button>
+            <button class="filter-btn">Intermediário</button>
+            <button class="filter-btn">Avançado</button>
+            <button class="filter-btn">Digital</button>
+            <button class="filter-btn">Tradicional</button>
+          </div>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1611532736576-1865ce24e589?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Curso Completo de Lettering"
+              />
+              <div class="card-body">
+                <span class="course-level level-iniciante">Iniciante</span>
+                <h5 class="card-title">Curso Completo de Lettering</h5>
+                <div class="course-rating">
+                  <div class="stars">
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                  </div>
+                  <span class="count">(127 avaliações)</span>
+                </div>
+                <p class="card-text">
+                  Do básico ao avançado: aprenda todas as técnicas essenciais do
+                  lettering digital.
+                </p>
+                <div class="course-features">
+                  <div class="course-feature">
+                    <i class="lucide-play"></i>
+                    <span>42 aulas</span>
+                  </div>
+                  <div class="course-feature">
+                    <i class="lucide-clock"></i>
+                    <span>8 horas</span>
+                  </div>
+                </div>
+                <div class="course-instructor">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/32.jpg"
+                    alt="Ana Martins"
+                    class="instructor-avatar"
+                  />
+                  <div>
+                    <h6 class="instructor-name">Ana Martins</h6>
+                    <p class="instructor-title">
+                      Designer & Especialista em Lettering
+                    </p>
+                  </div>
+                </div>
+                <div class="course-price mt-3">
+                  <span class="original-price">R$ 397</span>
+                  <span>R$ 297</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Lettering Tradicional para Iniciantes"
+              />
+              <div class="card-body">
+                <span class="course-level level-iniciante">Iniciante</span>
+                <h5 class="card-title">
+                  Lettering Tradicional para Iniciantes
+                </h5>
+                <div class="course-rating">
+                  <div class="stars">
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star-half"></i>
+                  </div>
+                  <span class="count">(98 avaliações)</span>
+                </div>
+                <p class="card-text">
+                  Aprenda a criar letras bonitas usando apenas papel e caneta.
+                  Técnicas essenciais para iniciantes.
+                </p>
+                <div class="course-features">
+                  <div class="course-feature">
+                    <i class="lucide-play"></i>
+                    <span>36 aulas</span>
+                  </div>
+                  <div class="course-feature">
+                    <i class="lucide-clock"></i>
+                    <span>6 horas</span>
+                  </div>
+                </div>
+                <div class="course-instructor">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/45.jpg"
+                    alt="Carlos Oliveira"
+                    class="instructor-avatar"
+                  />
+                  <div>
+                    <h6 class="instructor-name">Carlos Oliveira</h6>
+                    <p class="instructor-title">Calígrafo & Artista</p>
+                  </div>
+                </div>
+                <div class="course-price mt-3">
+                  <span class="original-price">R$ 247</span>
+                  <span>R$ 197</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Lettering Digital no Procreate"
+              />
+              <div class="card-body">
+                <span class="course-level level-intermediario"
+                  >Intermediário</span
+                >
+                <h5 class="card-title">Lettering Digital no Procreate</h5>
+                <div class="course-rating">
+                  <div class="stars">
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                    <i class="lucide-star"></i>
+                  </div>
+                  <span class="count">(215 avaliações)</span>
+                </div>
+                <p class="card-text">
+                  Domine o Procreate para criar lettering digital profissional.
+                  Inclui brushes exclusivos.
+                </p>
+                <div class="course-features">
+                  <div class="course-feature">
+                    <i class="lucide-play"></i>
+                    <span>54 aulas</span>
+                  </div>
+                  <div class="course-feature">
+                    <i class="lucide-clock"></i>
+                    <span>10 horas</span>
+                  </div>
+                </div>
+                <div class="course-instructor">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="Juliana Mendes"
+                    class="instructor-avatar"
+                  />
+                  <div>
+                    <h6 class="instructor-name">Juliana Mendes</h6>
+                    <p class="instructor-title">
+                      Artista Digital & Ilustradora
+                    </p>
+                  </div>
+                </div>
+                <div class="course-price mt-3">
+                  <span class="original-price">R$ 347</span>
+                  <span>R$ 297</span>
+                </div>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="#cursos" class="btn btn-primary rounded-pill"
+            >Ver Todos os Cursos</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section id="blog" class="py-5">
+      <div class="container">
+        <div class="section-title text-center">
+          <h2 class="display-5">Blog do Lettering</h2>
+          <p class="lead">
+            Dicas, tutoriais e inspiração para sua jornada criativa
+          </p>
+        </div>
+
+        <div class="row">
+          <!-- Blog Posts -->
+          <div class="col-lg-8">
+            <!-- Blog Post 1 -->
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <img
+                  src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80"
+                  alt="5 Dicas para Melhorar seu Lettering"
+                />
+              </div>
+              <div class="blog-post-meta">
+                <div class="author">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/32.jpg"
+                    alt="Ana Martins"
+                  />
+                  <span>Ana Martins</span>
+                </div>
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span>12 Mar 2023</span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <a href="#">5 Dicas para Melhorar seu Lettering Hoje Mesmo</a>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p>
+                  Aprenda técnicas simples que farão toda a diferença nos seus
+                  projetos de lettering. Neste artigo, compartilhamos dicas
+                  práticas que você pode aplicar imediatamente para elevar o
+                  nível das suas criações.
+                </p>
+              </div>
+              <a href="#" class="blog-post-link">
+                Ler mais <i class="lucide-arrow-right"></i>
+              </a>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <img
+                  src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Guia de Materiais"
+                />
+              </div>
+              <div class="blog-post-meta">
+                <div class="author">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/45.jpg"
+                    alt="Carlos Oliveira"
+                  />
+                  <span>Carlos Oliveira</span>
+                </div>
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span>5 Mar 2023</span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <a href="#">Guia Completo de Materiais para Iniciantes</a>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p>
+                  Descubra quais são os materiais essenciais para começar sua
+                  jornada no lettering. Neste guia, apresentamos as melhores
+                  opções para cada orçamento e objetivo, ajudando você a fazer
+                  escolhas inteligentes.
+                </p>
+              </div>
+              <a href="#" class="blog-post-link">
+                Ler mais <i class="lucide-arrow-right"></i>
+              </a>
+            </article>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <aside class="blog-sidebar">
+              <!-- Search Widget -->
+              <div class="sidebar-widget">
+                <h4 class="sidebar-widget-title">Pesquisar</h4>
+                <form>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Buscar artigos..."
+                    />
+                    <button class="btn btn-primary" type="submit">
+                      <i class="lucide-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Categories Widget -->
+              <div class="sidebar-widget">
+                <h4 class="sidebar-widget-title">Categorias</h4>
+                <ul class="sidebar-categories">
+                  <li>
+                    <a href="#">Tutoriais <span class="count">12</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Dicas & Truques <span class="count">8</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Inspiração <span class="count">6</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Materiais <span class="count">5</span></a>
+                  </li>
+                  <li>
+                    <a href="#">Negócios <span class="count">4</span></a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Popular Posts Widget -->
+              <div class="sidebar-widget">
+                <h4 class="sidebar-widget-title">Posts Populares</h4>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80"
+                      alt="Post Popular"
+                    />
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <a href="#"
+                        >5 Dicas para Melhorar seu Lettering Hoje Mesmo</a
+                      >
+                    </h5>
+                    <span class="popular-post-date">12 Mar 2023</span>
+                  </div>
+                </div>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=300&q=80"
+                      alt="Post Popular"
+                    />
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <a href="#"
+                        >Como Monetizar sua Arte de Lettering em 2023</a
+                      >
+                    </h5>
+                    <span class="popular-post-date">28 Fev 2023</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="#blog" class="btn btn-primary rounded-pill"
+            >Ver Todos os Artigos</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+              <i class="lucide-pen-tool me-2"></i>
+              Manual do Lettering
+            </a>
+            <p class="mb-4">
+              Recursos digitais premium para artistas de lettering que desejam
+              elevar sua arte ao próximo nível.
+            </p>
+            <div class="d-flex">
+              <a href="#" class="social-icon"
+                ><i class="lucide-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="lucide-facebook"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="lucide-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="lucide-twitter"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <h5 class="footer-title">Links</h5>
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#produtos" class="footer-link">Produtos</a>
+            <a href="#cursos" class="footer-link">Cursos</a>
+            <a href="#blog" class="footer-link">Blog</a>
+            <a href="#" class="footer-link">Sobre nós</a>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <h5 class="footer-title">Produtos</h5>
+            <a href="#" class="footer-link">Brushes</a>
+            <a href="#" class="footer-link">Templates</a>
+            <a href="#" class="footer-link">eBooks</a>
+            <a href="#" class="footer-link">Cursos</a>
+            <a href="#" class="footer-link">Pacotes</a>
+          </div>
+          <div class="col-lg-4 col-md-4 mb-4">
+            <h5 class="footer-title">Newsletter</h5>
+            <p class="mb-3">
+              Receba dicas, tutoriais e ofertas exclusivas diretamente no seu
+              email.
+            </p>
+            <form class="mb-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Seu email"
+                  aria-label="Email"
+                />
+                <button class="btn btn-primary" type="button">Inscrever</button>
+              </div>
+            </form>
+            <small class="text-muted"
+              >Ao se inscrever, você concorda com nossa política de
+              privacidade.</small
+            >
+          </div>
+        </div>
+        <div class="text-center copyright">
+          <p>&copy; 2023 Manual do Lettering. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div
+      class="modal fade"
+      id="searchModal"
+      tabindex="-1"
+      aria-labelledby="searchModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="searchModalLabel">Pesquisar</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="O que você está procurando?"
+                />
+                <button class="btn btn-primary" type="submit">
+                  <i class="lucide-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Ativar link de navegação com base na seção visível
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+        function highlightNavLink() {
+          const scrollY = window.pageYOffset;
+
+          sections.forEach((section) => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute("id");
+
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+              navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + sectionId) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+        }
+
+        window.addEventListener("scroll", highlightNavLink);
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual do Lettering - Recursos Digitais para Artistas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/lucide-static@0.344.0/font/lucide.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Fontes melhoradas para um visual mais suave e feminino -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      :root {
+        --primary: #ff3d7f;
+        --primary-light: #ff6b9c;
+        --primary-dark: #e31b5f;
+        --secondary: #9c27b0;
+        --dark: #1a1a2e;
+        --light: #ffffff;
+        --gray: #8a8a8a;
+        --gray-light: #f8f9fa;
+        --gray-dark: #343a40;
+        --success: #28a745;
+        --pink: #ff3e96;
+        --brown: #6d4c41;
+        --green: #2e8b57;
+        --light-gray: #f8f8f8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --shadow: 0 10px 30px rgba(255, 61, 127, 0.1);
+        --shadow-dark: 0 15px 40px rgba(26, 26, 46, 0.1);
+        --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        --border-radius: 16px;
+        --border-radius-sm: 8px;
+      }
+      :root {
+        --bs-primary: var(--primary);
+        --bs-primary-rgb: 255, 61, 127;
+      } /* Sistema de tipografia melhorado */
+      body {
+        padding-top: 76px;
+        font-family: "Quicksand", sans-serif;
+        line-height: 1.7;
+        color: var(--dark);
+        overflow-x: hidden;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .display-4,
+      .display-5 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+      }
+      .lead {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        line-height: 1.6;
+      }
+      header {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .navbar {
+        padding: 1rem 0;
+      }
+      .navbar-brand {
+        font-family: "Caveat", cursive;
+        font-size: 1.8rem;
+        color: var(--primary) !important;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+      }
+      .nav-link {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.03em;
+        padding: 0.5rem 1rem !important;
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+      .nav-link:hover::after {
+        width: 80%;
+      }
+      .nav-link:hover {
+        color: var(--primary) !important;
+      } /* Hero */
+      .card {
+        border: none;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        background: var(--light);
+        overflow: hidden;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-dark);
+      }
+      .card-img-top {
+        height: 240px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+      .card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+      .card-body {
+        padding: 1.5rem;
+      }
+      .card-title {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+        color: var(--dark);
+        line-height: 1.3;
+      }
+      .card-text {
+        color: var(--gray);
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.7;
+      }
+      .badge {
+        font-family: "Montserrat", sans-serif;
+        padding: 0.5em 1em;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+      .btn {
+        font-family: "Montserrat", sans-serif;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        transition: var(--transition);
+      }
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        box-shadow: 0 4px 14px rgba(255, 61, 127, 0.3);
+      }
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 61, 127, 0.4);
+      }
+      .btn-light {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: transparent;
+        color: var(--primary);
+      }
+      .btn-light:hover {
+        background: var(--light);
+        color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+      .btn-link {
+        color: var(--gray);
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+      .btn-link:hover {
+        color: var(--primary);
+        background-color: rgba(255, 61, 127, 0.1);
+      }
+      .lucide {
+        width: 1.25em;
+        height: 1.25em;
+        vertical-align: text-bottom;
+        transition: var(--transition);
+      }
+      .display-5 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        display: inline-block;
+      }
+      .display-5::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-light);
+        border-radius: 3px;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-color: var(--light-gray);
+        padding: 6rem 0 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 61, 127, 0.05) 0%,
+          rgba(156, 39, 176, 0.05) 100%
+        );
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: var(--gray);
+      }
+
+      .hero-image {
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-dark);
+        transition: var(--transition);
+        transform: perspective(1000px) rotateY(-5deg);
+      }
+
+      .hero-image:hover {
+        transform: perspective(1000px) rotateY(0);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: rgba(255, 61, 127, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+        transition: var(--transition);
+      }
+
+      .feature-card:hover .feature-icon {
+        background-color: var(--primary);
+        color: var(--light);
+        transform: translateY(-5px);
+      }
+
+      .feature-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-text {
+        color: var(--gray);
+        font-size: 0.95rem;
+      }
+
+      .testimonial {
+        background-color: var(--light);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .testimonial::before {
+        content: "position: absolute";
+        top: 10px;
+        left: 20px;
+        font-size: 5rem;
+        font-family: "Playfair Display", serif;
+        color: rgba(255, 61, 127, 0.1);
+        line-height: 1;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .testimonial-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 1rem;
+        object-fit: cover;
+      }
+
+      .testimonial-name {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-role {
+        font-size: 0.85rem;
+        color: var(--gray);
+      }
+
+      .cta-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        padding: 5rem 0;
+        color: var(--light);
+        border-radius: var(--border-radius);
+        margin: 5rem 0;
+      }
+
+      .cta-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-text {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .btn-light-outline {
+        background: transparent;
+        border: 2px solid var(--light);
+        color: var(--light);
+      }
+
+      .btn-light-outline:hover {
+        background: var(--light);
+        color: var(--primary);
+      }
+
+      footer {
+        background-color: var(--dark);
+        color: var(--light);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: var(--light);
+      }
+
+      .footer-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.75rem;
+        transition: var(--transition);
+      }
+
+      .footer-link:hover {
+        color: var(--primary-light);
+        transform: translateX(5px);
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+        color: var(--light);
+        transition: var(--transition);
+      }
+
+      .social-icon:hover {
+        background-color: var(--primary);
+        transform: translateY(-5px);
+      }
+
+      .copyright {
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .card,
+      .section-title {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+      .nav-item {
+        animation: slideIn 0.3s ease-out forwards;
+      } /* Responsivo - Todos os
+      ajustes para mobile */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          background: var(--light);
+          padding: 1rem;
+          border-radius: var(--border-radius);
+          box-shadow: var(--shadow);
+          margin-top: 1rem;
+        }
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        .hero {
+          padding: 4rem 0 3rem;
+        }
+        .hero-image {
+          margin-top: 2rem;
+        }
+      }
+      @media (max-width: 768px) {
+        body {
+          padding-top: 66px;
+          font-size: 15px;
+        }
+        .display-4 {
+          font-size: 2.2rem;
+        }
+        .display-5 {
+          font-size: 2rem;
+        }
+        .card-img-top {
+          height: 200px;
+        }
+        .navbar {
+          padding: 0.5rem 0;
+        }
+        .btn {
+          padding: 0.625rem 1.25rem;
+        }
+        .card-title {
+          font-size: 1.25rem;
+        }
+        .hero-title {
+          font-size: 2rem;
+        }
+        .cta-title {
+          font-size: 2rem;
+        }
+      }
+      @media (max-width: 576px) {
+        .display-4 {
+          font-size: 1.8rem;
+        }
+        .display-5 {
+          font-size: 1.6rem;
+        }
+        .card-img-top {
+          height: 180px;
+        }
+        .section-title {
+          font-size: 1.5rem;
+        }
+        .btn-lg {
+          padding: 0.75rem 1.5rem;
+          font-size: 1rem;
+        }
+        .hero-title {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+    <!-- Header -->
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <i class="lucide-pen-tool me-2"></i>
+            Manual do Lettering
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cursos.html">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+              <button
+                class="btn btn-link position-relative"
+                data-bs-toggle="modal"
+                data-bs-target="#searchModal"
+              >
+                <i class="lucide-search"></i>
+              </button>
+              <button class="btn btn-link position-relative">
+                <i class="lucide-shopping-cart"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
+                  >0</span
+                >
+              </button>
+              <button class="btn btn-primary rounded-pill d-none d-lg-block">
+                Entrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <h1 class="hero-title">Desperte sua criatividade com lettering</h1>
+            <p class="hero-subtitle">
+              Aprenda técnicas exclusivas, baixe recursos premium e transforme
+              sua arte em uma carreira de sucesso.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="cursos.html" class="btn btn-primary btn-lg rounded-pill"
+                >Ver Cursos</a
+              >
+              <a href="produtos.html" class="btn btn-light btn-lg rounded-pill"
+                >Explorar Recursos</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80"
+              alt="Artista de lettering trabalhando"
+              class="img-fluid hero-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 mt-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3">
+            Por que escolher nossos recursos
+          </h2>
+          <p class="lead text-muted">
+            Criados por especialistas para impulsionar sua jornada criativa
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="text-center feature-card">
+              <div class="feature-icon mx-auto">
+                <i class="lucide-star"></i>
+              </div>
+              <h3 class="feature-title">Qualidade Premium</h3>
+              <p class="feature-text">
+                Todos os nossos recursos são criados por artistas profissionais
+                com anos de experiência em lettering.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center feature-card">
+              <div class="feature-icon mx-auto">
+                <i class="lucide-book-open"></i>
+              </div>
+              <h3 class="feature-title">Conteúdo Exclusivo</h3>
+              <p class="feature-text">
+                Acesse tutoriais, brushes e templates que não estão disponíveis
+                em nenhum outro lugar.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center feature-card">
+              <div class="feature-icon mx-auto">
+                <i class="lucide-users"></i>
+              </div>
+              <h3 class="feature-title">Comunidade Ativa</h3>
+              <p class="feature-text">
+                Faça parte de uma comunidade de artistas que compartilham dicas
+                e inspirações diariamente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produtos-destaque" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3">Produtos em Destaque</h2>
+          <p class="lead text-muted">
+            Recursos selecionados para impulsionar sua criatividade
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1611532736576-1865ce24e589?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Curso Completo de Lettering"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <span class="badge bg-primary">Curso</span>
+                  <span class="text-primary fw-bold">R$ 297</span>
+                </div>
+                <h5 class="card-title">Curso Completo de Lettering</h5>
+                <p class="card-text">
+                  Do básico ao avançado: aprenda todas as técnicas essenciais do
+                  lettering digital.
+                </p>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Pack de Brushes Premium"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <span class="badge bg-primary">Brushes</span>
+                  <span class="text-primary fw-bold">R$ 97</span>
+                </div>
+                <h5 class="card-title">Pack de Brushes Premium</h5>
+                <p class="card-text">
+                  100+ pincéis profissionais para Procreate, perfeitos para
+                  lettering digital.
+                </p>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="eBook Lettering Moderno"
+              />
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <span class="badge bg-primary">eBook</span>
+                  <span class="text-primary fw-bold">R$ 47</span>
+                </div>
+                <h5 class="card-title">eBook Lettering Moderno</h5>
+                <p class="card-text">
+                  Guia completo com técnicas modernas e exercícios práticos de
+                  lettering.
+                </p>
+                <button class="btn btn-primary rounded-pill w-100">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="produtos.html" class="btn btn-outline-primary rounded-pill"
+            >Ver todos os produtos</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3">O que dizem nossos alunos</h2>
+          <p class="lead text-muted">
+            Histórias de sucesso de quem transformou sua arte com nossos
+            recursos
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "O curso de lettering mudou completamente minha abordagem
+                artística. Hoje consigo criar designs profissionais para meus
+                clientes."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://randomuser.me/api/portraits/women/32.jpg"
+                  alt="Mariana Silva"
+                  class="testimonial-avatar"
+                />
+                <div>
+                  <h5 class="testimonial-name">Mariana Silva</h5>
+                  <p class="testimonial-role">Designer Freelancer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "Os brushes premium são incríveis! Economizei horas de trabalho
+                e consegui elevar o nível das minhas ilustrações."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://randomuser.me/api/portraits/men/45.jpg"
+                  alt="Rafael Costa"
+                  class="testimonial-avatar"
+                />
+                <div>
+                  <h5 class="testimonial-name">Rafael Costa</h5>
+                  <p class="testimonial-role">Ilustrador</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "Graças ao Manual do Lettering, consegui transformar meu hobby
+                em uma fonte de renda. Recomendo a todos!"
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Camila Mendes"
+                  class="testimonial-avatar"
+                />
+                <div>
+                  <h5 class="testimonial-name">Camila Mendes</h5>
+                  <p class="testimonial-role">Artista Digital</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-0">
+      <div class="container">
+        <div class="cta-section text-center">
+          <h2 class="cta-title">Pronta para transformar sua arte?</h2>
+          <p class="cta-text">
+            Junte-se a milhares de artistas que já estão transformando sua
+            paixão em uma carreira de sucesso.
+          </p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="cursos.html" class="btn btn-light btn-lg rounded-pill"
+              >Começar agora</a
+            >
+            <a href="#" class="btn btn-light-outline btn-lg rounded-pill"
+              >Saiba mais</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3">Últimas do Blog</h2>
+          <p class="lead text-muted">
+            Dicas, tutoriais e inspiração para sua jornada criativa
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="5 Dicas para Melhorar seu Lettering"
+              />
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <span class="badge bg-secondary me-2">Tutorial</span>
+                  <small class="text-muted">12 Mar 2023</small>
+                </div>
+                <h5 class="card-title">
+                  5 Dicas para Melhorar seu Lettering Hoje Mesmo
+                </h5>
+                <p class="card-text">
+                  Aprenda técnicas simples que farão toda a diferença nos seus
+                  projetos de lettering.
+                </p>
+                <a href="blog.html" class="btn btn-link p-0"
+                  >Ler mais <i class="lucide-arrow-right ms-1"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Guia de Materiais"
+              />
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <span class="badge bg-secondary me-2">Guia</span>
+                  <small class="text-muted">5 Mar 2023</small>
+                </div>
+                <h5 class="card-title">
+                  Guia Completo de Materiais para Iniciantes
+                </h5>
+                <p class="card-text">
+                  Descubra quais são os materiais essenciais para começar sua
+                  jornada no lettering.
+                </p>
+                <a href="blog.html" class="btn btn-link p-0"
+                  >Ler mais <i class="lucide-arrow-right ms-1"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Como Monetizar"
+              />
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <span class="badge bg-secondary me-2">Carreira</span>
+                  <small class="text-muted">28 Fev 2023</small>
+                </div>
+                <h5 class="card-title">
+                  Como Monetizar sua Arte de Lettering em 2023
+                </h5>
+                <p class="card-text">
+                  Estratégias práticas para transformar sua paixão em uma fonte
+                  de renda.
+                </p>
+                <a href="blog.html" class="btn btn-link p-0"
+                  >Ler mais <i class="lucide-arrow-right ms-1"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="blog.html" class="btn btn-outline-primary rounded-pill"
+            >Ver todos os artigos</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+              <i class="lucide-pen-tool me-2"></i>
+              Manual do Lettering
+            </a>
+            <p class="mb-4">
+              Recursos digitais premium para artistas de lettering que desejam
+              elevar sua arte ao próximo nível.
+            </p>
+            <div class="d-flex">
+              <a href="#" class="social-icon"
+                ><i class="lucide-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="lucide-facebook"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="lucide-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="lucide-twitter"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <h5 class="footer-title">Links</h5>
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="produtos.html" class="footer-link">Produtos</a>
+            <a href="cursos.html" class="footer-link">Cursos</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="#" class="footer-link">Sobre nós</a>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <h5 class="footer-title">Produtos</h5>
+            <a href="#" class="footer-link">Brushes</a>
+            <a href="#" class="footer-link">Templates</a>
+            <a href="#" class="footer-link">eBooks</a>
+            <a href="#" class="footer-link">Cursos</a>
+            <a href="#" class="footer-link">Pacotes</a>
+          </div>
+          <div class="col-lg-4 col-md-4 mb-4">
+            <h5 class="footer-title">Newsletter</h5>
+            <p class="mb-3">
+              Receba dicas, tutoriais e ofertas exclusivas diretamente no seu
+              email.
+            </p>
+            <form class="mb-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Seu email"
+                  aria-label="Email"
+                />
+                <button class="btn btn-primary" type="button">Inscrever</button>
+              </div>
+            </form>
+            <small class="text-muted"
+              >Ao se inscrever, você concorda com nossa política de
+              privacidade.</small
+            >
+          </div>
+        </div>
+        <div class="text-center copyright">
+          <p>&copy; 2023 Manual do Lettering. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
