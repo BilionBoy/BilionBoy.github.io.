@@ -1,7 +1,7 @@
 :root {
-  --primary: #ff3d7f;
-  --primary-light: #ff6b9c;
-  --primary-dark: #e31b5f;
+  --primary: #e42278;
+  --primary-light: #f5d3dd;
+  --primary-dark: #ed7bab;
   --secondary: #9c27b0;
   --dark: #1a1a2e;
   --light: #ffffff;
@@ -287,7 +287,6 @@ header {
   position: relative;
   z-index: 1;
 }
-
 
 /* Features Section */
 .feature-icon {
@@ -1150,7 +1149,7 @@ footer {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #333;
+  color: #0D111A;
   position: relative;
   z-index: 2;
 }
@@ -1171,7 +1170,7 @@ footer {
 .hero-subtitle {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  color: #555;
+  color: #fff8f8;
   position: relative;
   z-index: 2;
 }
